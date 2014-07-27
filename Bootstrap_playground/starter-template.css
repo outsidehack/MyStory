@@ -6,11 +6,27 @@ body {
   text-align: center;
 }
 
+table {
+	background-color: #C8DEE4;
+}
+#header-bar {
+	background-color: #5B81F5;
+}
+
+.header-text {
+	color: #FAFBFC !important;
+}
+
 ul
 {
 	list-style-type: none;
 }
 
-li {
-	border: solid;
+.instance {
+	background-color: #FAFBFC;
+}
+
+.nav > .btn {
+	border: outset;
+	border-radius: 15px;
 }
