@@ -47,7 +47,7 @@ module.exports = function(passport) {
 					newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
 					newUser.facebook.refreshToken = refreshToken;
 
-					newUser.save(function(err, done) {
+					newUser.save(function(err) {
 						if (err) {
 							throw err;
 						}
@@ -78,13 +78,13 @@ module.exports = function(passport) {
 					var newUser = new User();
 					newUser.twitter.id = profile.id;
 					newUser.twitter.token = token;
-					newUser.twitter.name = profile.username;
+					newUser.twitter.screenName = profile.username;
 					newUser.twitter.secret = tokenSecret;
-					newUser.save(function(err, done) {
+					newUser.save(function(err) {
 						if (err) {
 							throw err;
 						}
-						done(null, newUser);
+						return done(null, newUser);
 					});
 				}
 			});
@@ -114,11 +114,11 @@ module.exports = function(passport) {
 					newUser.instagram.name = profile.displayName;
 					newUser.instagram.refreshToken = refreshToken;
 
-					newUser.save(function(err, done) {
+					newUser.save(function(err) {
 						if (err) {
 							throw err;
 						}
-						done(null, newUser);
+						return done(null, newUser);
 					});
 				}
 
