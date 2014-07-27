@@ -24,3 +24,23 @@ require('./config/passport.js')(passport);
 app.set('view engine', 'ejs');
 
 // include all files that aren't in the root folder by default
+app.use('/views', express.static(__dirname + '/views'));
+// not sure if this is required, but just to be safe
+app.use('/assets', express.static(__dirname + '/views/assets'));
+
+// set up the app to use modules when required
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(flash());
+app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(session({ secret: 'northwesternandshmoop'}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Link to our routes.js
+require('./config/routes.js')(app, passport);
+
+app.listen(8080, function() {
+	console.log('Listening on port 8080');
+});
