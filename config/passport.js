@@ -88,7 +88,6 @@ module.exports = function(passport) {
 
 			if (!req.user) {
 				User.findOne( { 'twitter.id': profile.id }, function(err, user) {
-					console.log(profile);
 					if (err) {
 						return done(err);
 					}
