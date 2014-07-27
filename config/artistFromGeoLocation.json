@@ -1,0 +1,180 @@
+[
+    {
+        "37.767559, -122.494699": {
+            "stage": "Lands End",
+            "date": {
+                "2014-08-08": {
+                    "8:05 - 9:10":"Kanye West",
+                    "6:20 - 7:20":"Disclosure",
+                    "4:50 - 5:50":"Chromeo",
+                    "2:00 - 2:50":"Run the Jewels (El-P & Killer Mike)",
+                    "3:20 - 4:20":"Holy Ghost!",
+                    "12:40 - 1:30":"The Soul Rebels"
+                },
+                "2014-04-09": {
+                    "7:55 - 9:55":"Tom Petty & the Heartbreakers",
+                    "6:00 - 7:10":"Death Cab For Cutie",
+                    "4:30 - 5:30":"Haim",
+                    "3:00 - 4:00":"Local Natives",
+                    "1:40 - 2:30":"The Kooks",
+                    "12:20 - 1:10":"Dum Dum Girls"
+                },
+                "2014-04-10": {
+                    "8:05 - 9:35":"The Killers",
+                    "6:10 - 7:20":"The Flaming Lips",
+                    "4:40 - 5:40":"Spoon",
+                    "3:10 - 4:10":"Chvrches",
+                    "1:50 - 2:40":"Paolo Nutini",
+                    "12:30 - 1:20":"Imelda May"
+                }
+            }
+        },
+    },
+    {
+        "37.768047, -122.491196": {
+            "stage": "The House by Heineken",
+            "date": {
+                "2014-08-08": {
+                    "6:00 - 8:00":"DJ Icey",
+                    "4:30 - 6:00":"Paul Johnson",
+                    "3:00 - 4:30":"Motion Potion",
+                    "1:30 - 3:00":"DJ Dials",
+                    "12:00 - 1:30":"Shouts!"
+                },
+                "2014-04-09": {
+                    "6:00 - 7:45": "Gorgon City",
+                    "4:30 - 6:00":"The Scumfrog",
+                    "3:00 - 4:30":"Shawn Reynaldo",
+                    "1:30 - 3:00":"Deejay Theory",
+                    "12:00 - 1:30":"Matt Haze"
+
+                },
+                "2014-04-10": {
+                    "5:30 - 8:00":"Green Velvet",
+                    "4:00 - 5:30":"Soultech 'Gene Farris & Dustin Sheridan'",
+                    "3:00 - 4:00":"Cappa Regime",
+                    "12:00 - 3:00":"Lights Down Low: Richie Panic, Sleazemore & MPHD"
+                }
+            }
+        },
+    },
+    {
+        "37.769828, -122.493286": {
+            "stage": "Sutro",
+            "date": {
+                "2014-08-08": {
+                    "7:00 - 8:15":"Tedeschi Trucks Band",
+                    "5:30 - 6:30":"Kacey Musgraves",
+                    "4:00 - 5:00":"Nicki Bluhm and The Gramblers",
+                    "2:30 - 3:30":"Phosphorescent",
+                    "1:10 - 2:00": "Greensky Bluegrass",
+                    "12:00 - 12:40":"RayLand Baxter",
+                },
+                "2014-04-09": {
+                    "7:00 - 8:10":"Atmosphere",
+                    "5:30 - 6:30":"John Butler Trio",
+                    "4:00 - 5:00":"Deer Tick",
+                    "2:30 - 3:30":"Christopher Owens",
+                    "1:10 - 2:00":"Valerie June",
+                    "12:00 - 12:45":"Tumbleweed Wanderers"
+                },
+                "2014-04-10": {
+                    "6:50 - 8:00":"Ray LaMontagne",
+                    "5:20 - 6:20":"Ben Howard",
+                    "3:50 - 4:50":"Jenny Lewis",
+                    "2:30 - 3:20":"Lucius",
+                    "1:10 - 2:00":"Woods",
+                    "12:00 - 12:45":"Jonathan Wilson"
+                }
+            }
+        },
+    },
+    {
+        "37.770546, -122.489254": {
+            "stage": "The Barbary",
+            "date": {
+                "2014-08-08": {
+                    "6:15 - 7:15":"Garfunkel & Oates,Aparna Nancherla",
+                    "4:30 - 5:45":"Aisha Tyler,Rory Albanese,Aparna Nancherla",
+                    "2:30 - 3:45":"Aisha Tyler,Ali Mafi,Matt McCarthy",
+                    "12:45 - 1:45":"Garfunkel & Oates,Aparna Nancherla"
+                },
+                "2014-04-09": {
+                    "5;45 - 7:00":"Aisha Tyler,Ali Mafi,Matt McCarthy",
+                    "4:00 - 5:00":"The Improvised Shakespeare Company",
+                    "2:15 - 3:15":"Improv4Humans with Matt Besser and guests Chris Gethard, Lauren Lapkus and Seth Morris",
+                    "12:45 - 1:45":"The Chris Gethard Show"
+                },
+                "2014-04-10": {
+                    "6:30 - 8:00":"Stars of Silicon Valley: Thomas Middleditch, T.J. Miller and Kumail Nanjiani",
+                    "4:30 - 6:00":"Stars of Silicon Valley: Thomas Middleditch, T.J. Miller and Kumail Nanjiani",
+                    "2:30 - 3:45":"Lewis Black,Rory Albanese",
+                    "12:45 - 1:45":"The Improvised Shakespeare Company"
+                }
+            }
+        },
+    },
+    {
+        "37.769986, -122.485522": {
+            "stage": "Panhandle",
+            "date": {
+                "2014-08-08": {
+                    "7:50 - 8:35": "Typhoon",
+                    "6:05 - 6:45":"Bear Hands",
+                    "4:30 - 5:10":"Mikal Cronin",
+                    "2:55 - 3:35":"Nahko and Medicine for the People",
+                    "12:00 - 12:40":"Night Terrors of 1927"
+                },
+                "2014-04-09": {
+                    "7:55 - 8:40":"Boys Noize",
+                    "6:05 - 6:50":"Big Freedia",
+                    "4:30 - 5:10":"Vance Joy",
+                    "2:55 - 3:35":"Finish Ticket",
+                    "1:25 - 2:05":"The Districts",
+                    "12:00 - 12:40":"Nocona"
+                },
+                "2014-04-10": {
+                    "7:40 - 8:25":"Gold Panda",
+                    "5:55 - 6:35":"Gardens & Villa",
+                    "4:20 - 5:00":"Courtney Barnett",
+                    "2:45 - 3:25":"Hiss Golden Messenger",
+                    "1:20 - 2:00":"The Brothers Comatose",
+                    "12:00 - 12:40":"The Bots"
+
+                }
+            }
+        },
+    },
+    {
+        "37.769800, -122.482443": {
+            "stage": "Twin Peaks",
+            "date": {
+                "2014-08-08": {
+                    "8:40 - 9:55":"Arctic Monkeys",
+                    "6:50 - 7:50":"Tegan & Sara",
+                    "5:15 - 6:05":"Grouplove",
+                    "3:40 - 4:30":"Warpaint",
+                    "2:10 - 2:55":"Bleachers",
+                    "12:45 - 1:30":"Aer"
+                },
+                "2014-04-09": {
+                    "8:40 - 9:55":"Macklemore & Ryan Lewis",
+                    "6:55 - 7:55":"Duck Sauce",
+                    "5:15 - 6:05":"Capital Cities",
+                    "3:40 - 4:30":"Tycho",
+                    "2:05 - 2:55":"Jagwarma",
+                    "12:40 -1:25":"Trails and Ways"
+                },
+                "2014-04-10": {
+                    "8:25 - 9:25":"Ti\u00ebsto",
+                    "6:40 - 7:40":"Cut Copy",
+                    "5:05 - 5:55":"Lykke Li",
+                    "3:30 - 4:20":"Flume",
+                    "2:00 - 2:45":"Watsky",
+                    "12:40 - 1:20":"Made in Heights"
+
+                }
+            }
+        },
+    },
+]
