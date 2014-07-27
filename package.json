@@ -20,6 +20,7 @@
     "passport-instagram": "^0.1.2",
     "passport-local": "~0.1.6",
     "passport-twitter": "^1.0.2",
+    "twit": "^1.1.18",
     "twitter": "^0.2.9"
   }
 }
