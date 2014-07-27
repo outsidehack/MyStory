@@ -58,28 +58,36 @@ module.exports = function(passport) {
 	}
 	));
 
-	// Twitter login authentication
-	// passport.use(new TwitterStrategy({
-	// 	consumerKey: configAuth.twitterAuth.consumerKey,
-	// 	consumerSecret: configAuth.twitterAuth.consumerSecret,
-	// 	callbackURL: 'http://127.0.0.1:8080/auth/twitter/callback'
-	// },
-	// function(token, tokenSecret, profile, done) {
-	// 	process.nextTick(function() {
-	// 		User.findOne( { 'twitter.id': profile.id }, function(err, user) {
-	// 			if (err) {
-	// 				return done(err);
-	// 			}
-
-	// 			if (user) {
-	// 				return done(null, user);
-	// 			} else {
-	// 				var newUser = new User();
-	// 				newUser.tw
-	// 			}
-	// 		});
-	// 	});
-	// }));
+	//Twitter login authentication
+	passport.use(new TwitterStrategy({
+		consumerKey: configAuth.twitterAuth.consumerKey,
+		consumerSecret: configAuth.twitterAuth.consumerSecret,
+		callbackURL: configAuth.twitterAuth.callbackURL
+	},
+	function(token, tokenSecret, profile, done) {
+		process.nextTick(function() {
+			User.findOne( { 'twitter.id': profile.id }, function(err, user) {
+				console.log(profile);
+				if (err) {
+					return done(err);
+				}
+				if (user) {
+					return done(null, user);
+				} else {
+					var newUser = new User();
+					newUser.twitter.id = profile.id;
+					newUser.twitter.token = token;
+					newUser.twitter.name = profile.username;
+					newUser.save(function(err, done) {
+						if (err) {
+							throw err;
+						}
+						done(null, newUser);
+					});
+				}
+			});
+		});
+	}));
 
 	// Instagram login authentication
 	passport.use(new InstagramStrategy( {

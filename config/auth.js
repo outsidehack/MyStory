@@ -11,7 +11,7 @@ module.exports = {
 	'twitterAuth': {
 		'consumerKey': 'hNTeruX9tfcT1HARiB0uhjYZh',
 		'consumerSecret': 'H5khJPeK3PoGlJM3USRxgThwtawgQxIDRuBoLaGnlg3IQ74osF',
-		'callbackURL': 'http://localhost:8080/auth/twitter/callback'
+		'callbackURL': 'http://127.0.0.1:8080/auth/twitter/callback'
 	},
 
 	'instagramAuth': {

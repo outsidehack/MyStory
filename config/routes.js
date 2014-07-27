@@ -16,12 +16,9 @@ module.exports = function(app, passport) {
 	app.get('/auth/twitter/callback',
 		passport.authenticate('twitter', 
 		{
+			successRedirect: '/test',
 			failureRedirect: '/'
-		},
-		function(req, res) {
-			res.redirect('/test');
-		}
-	));
+		}));
 
 	app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
 
