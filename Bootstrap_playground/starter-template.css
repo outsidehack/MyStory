@@ -5,3 +5,28 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+table {
+	background-color: #C8DEE4;
+}
+#header-bar {
+	background-color: #5B81F5;
+}
+
+.container-fluid{
+	padding-top: 15px;
+}
+
+ul
+{
+	list-style-type: none;
+}
+
+.instance {
+	background-color: #FAFBFC;
+}
+
+.nav > .btn {
+	border: outset;
+	border-radius: 15px;
+}
