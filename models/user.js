@@ -7,21 +7,24 @@ var userSchema = mongoose.Schema({
 		id: String,
 		token: String,
 		email: String,
-		name: String
+		name: String,
+		refreshToken: String
 	},
 
 	twitter: {
 		id: String,
 		token: String,
 		email: String,
-		name: String
+		name: String.
+		secret: String
 	},
 
 	instagram: {
 		id: String,
 		token: String,
 		username: String,
-		name: String
+		name: String,
+		refreshToken: String
 	}
 
 });

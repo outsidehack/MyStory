@@ -45,6 +45,7 @@ module.exports = function(passport) {
 					newUser.facebook.token = token;
 					newUser.facebook.email = profile.emails[0].value;
 					newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
+					newUser.facebook.refreshToken = refreshToken;
 
 					newUser.save(function(err, done) {
 						if (err) {
@@ -78,6 +79,7 @@ module.exports = function(passport) {
 					newUser.twitter.id = profile.id;
 					newUser.twitter.token = token;
 					newUser.twitter.name = profile.username;
+					newUser.twitter.secret = tokenSecret;
 					newUser.save(function(err, done) {
 						if (err) {
 							throw err;
@@ -110,6 +112,7 @@ module.exports = function(passport) {
 					newUser.instagram.token = accessToken;
 					newUser.instagram.username = profile.username;
 					newUser.instagram.name = profile.displayName;
+					newUser.instagram.refreshToken = refreshToken;
 
 					newUser.save(function(err, done) {
 						if (err) {
