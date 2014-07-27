@@ -37,10 +37,15 @@ module.exports = function(passport) {
 		callbackURL: configAuth.twitterAuth.callbackURL
 	},
 	function(token, tokenSecret, profile, done) {
-		if (err) {
-			return done(err);
-		}
-
+		process.nextTick(function() {
+			User.findOne( { 'twitter.id': profile.id }, function(err, user) {
+				if (err) {
+					return done(err);
+				}
+				console.log('hi');
+				done(null, user);
+			});
+		});
 	}
 	));
 }
