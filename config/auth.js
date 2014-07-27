@@ -14,7 +14,9 @@ module.exports = {
 		'callbackURL': 'http://localhost:8080/auth/twitter/callback'
 	}
 
-	// instagramAuth: {
-
-	// }
+	'instagramAuth': {
+		'clientID': ,
+		'clientSecret':
+		'callbackURL': 'http://localhost:8080/auth/instagram/callback'
+	}
 };

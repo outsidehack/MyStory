@@ -3,6 +3,8 @@
 //load everything needed in this file
 var FacebookStrategy = require('passport-facebook').Strategy,
 	TwitterStrategy = require('passport-twitter').Strategy,
+	InstagramStrategy = require('passport-instagram').Strategy;
+
 	flash = require('connect-flash'),
 	User = require('../models/user.js'),
 	configAuth = require('./auth.js');
@@ -26,8 +28,30 @@ module.exports = function(passport) {
 		clientSecret: configAuth.facebookAuth.clientSecret,
 		callbackURL: configAuth.facebookAuth.callbackURL
 	},
-	function(token, refreshToken) {
+	function(token, refreshToken, profile, done) {
+		process.nextTick(function() {
+			User.findOne( { 'facebook.id': profile.id}, function(err, user) {
+				if (err) {
+					return done(err);
+				}
+				if (user) {
+					return done(null, user);
+				} else {
+					var newUser = new User();
+					newUser.facebook.id = profile.id;
+					newUser.facebook.token = token;
+					newUser.facebook.email = profile.emails[0].value;
+					newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
 
+					newUser.save(function(err, done) {
+						if (err) {
+							throw err;
+						}
+						return done(null, newUser);
+					});
+				}
+			});
+		});
 	}
 	));
 
@@ -38,18 +62,18 @@ module.exports = function(passport) {
 	},
 	function(token, tokenSecret, profile, done) {
 		process.nextTick(function() {
-			// User.findOne( { 'twitter.id': profile.id }, function(err, user) {
-			// 	if (err) {
-			// 		return done(err);
-			// 	}
+			User.findOne( { 'twitter.id': profile.id }, function(err, user) {
+				if (err) {
+					return done(err);
+				}
 
-			// 	if (user) {
-			// 		return done(null, user);
-			// 	}
-			// 	console.log('hi');
-			// 	console.log(profile.username);
-			// 	done(null, user);
-			// });
+				if (user) {
+					return done(null, user);
+				}
+				console.log('hi');
+				console.log(profile.username);
+				done(null, user);
+			});
 			console.log(profile.username);
 			console.log('hi');
 		});
