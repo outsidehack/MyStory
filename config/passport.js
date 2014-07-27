@@ -34,18 +34,24 @@ module.exports = function(passport) {
 	passport.use(new TwitterStrategy({
 		consumerKey: configAuth.twitterAuth.consumerKey,
 		consumerSecret: configAuth.twitterAuth.consumerSecret,
-		callbackURL: configAuth.twitterAuth.callbackURL
+		callbackURL: 'http://127.0.0.1:8080/auth/twitter/callback'
 	},
 	function(token, tokenSecret, profile, done) {
 		process.nextTick(function() {
-			User.findOne( { 'twitter.id': profile.id }, function(err, user) {
-				if (err) {
-					return done(err);
-				}
-				console.log('hi');
-				done(null, user);
-			});
+			// User.findOne( { 'twitter.id': profile.id }, function(err, user) {
+			// 	if (err) {
+			// 		return done(err);
+			// 	}
+
+			// 	if (user) {
+			// 		return done(null, user);
+			// 	}
+			// 	console.log('hi');
+			// 	console.log(profile.username);
+			// 	done(null, user);
+			// });
+			console.log(profile.username);
+			console.log('hi');
 		});
-	}
-	));
-}
+	}));
+};

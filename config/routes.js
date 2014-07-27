@@ -9,15 +9,19 @@ module.exports = function(app, passport) {
 
 	app.get('/test', function(req, res) {
 		res.render('test2.ejs');
-	})
+	});
 
 	app.get('/auth/twitter', passport.authenticate('twitter'));
 
 	app.get('/auth/twitter/callback',
-		passport.authenticate('twitter', {
-			successRedirect: '/test',
+		passport.authenticate('twitter', 
+		{
 			failureRedirect: '/'
-		}));
+		},
+		function(req, res) {
+			res.redirect('/test');
+		}
+		));
 
 
 }
