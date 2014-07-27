@@ -22,6 +22,7 @@ module.exports = function(passport) {
 		});
 	});
 
+	// Facebook login authentication
 	passport.use(new FacebookStrategy({
 		// call values found in auth.js
 		clientID: configAuth.facebookAuth.clientID,
@@ -31,9 +32,11 @@ module.exports = function(passport) {
 	function(token, refreshToken, profile, done) {
 		process.nextTick(function() {
 			User.findOne( { 'facebook.id': profile.id}, function(err, user) {
+				// if error, throw error
 				if (err) {
 					return done(err);
 				}
+				// if user found, return that user
 				if (user) {
 					return done(null, user);
 				} else {
@@ -55,27 +58,62 @@ module.exports = function(passport) {
 	}
 	));
 
-	passport.use(new TwitterStrategy({
-		consumerKey: configAuth.twitterAuth.consumerKey,
-		consumerSecret: configAuth.twitterAuth.consumerSecret,
-		callbackURL: 'http://127.0.0.1:8080/auth/twitter/callback'
-	},
-	function(token, tokenSecret, profile, done) {
+	// Twitter login authentication
+	// passport.use(new TwitterStrategy({
+	// 	consumerKey: configAuth.twitterAuth.consumerKey,
+	// 	consumerSecret: configAuth.twitterAuth.consumerSecret,
+	// 	callbackURL: 'http://127.0.0.1:8080/auth/twitter/callback'
+	// },
+	// function(token, tokenSecret, profile, done) {
+	// 	process.nextTick(function() {
+	// 		User.findOne( { 'twitter.id': profile.id }, function(err, user) {
+	// 			if (err) {
+	// 				return done(err);
+	// 			}
+
+	// 			if (user) {
+	// 				return done(null, user);
+	// 			} else {
+	// 				var newUser = new User();
+	// 				newUser.tw
+	// 			}
+	// 		});
+	// 	});
+	// }));
+
+	// Instagram login authentication
+	passport.use(new InstagramStrategy( {
+		clientID: configAuth.instagramAuth.clientID,
+		clientSecret: configAuth.instagramAuth.clientSecret,
+		callbackURL: configAuth.instagramAuth.callbackURL
+	}, 
+	function(accessToken, refreshToken, profile, done) {
 		process.nextTick(function() {
-			User.findOne( { 'twitter.id': profile.id }, function(err, user) {
+			User.findOne( { 'instagram.id': profile.id }, function(err, user) {
 				if (err) {
 					return done(err);
 				}
-
 				if (user) {
+					console.log(profile);
 					return done(null, user);
+				} else {
+					var newUser = new User();
+					newUser.instagram.id = profile.id;
+					newUser.instagram.token = accessToken;
+					newUser.instagram.username = profile.username;
+					newUser.instagram.name = profile.displayName;
+
+					newUser.save(function(err, done) {
+						if (err) {
+							throw err;
+						}
+						done(null, newUser);
+					});
 				}
-				console.log('hi');
-				console.log(profile.username);
-				done(null, user);
+
 			});
-			console.log(profile.username);
-			console.log('hi');
 		});
-	}));
+	}
+	))
+
 };

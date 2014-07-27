@@ -31,10 +31,16 @@ module.exports = function(app, passport) {
 			failureRedirect: '/'
 		}));
 
+	app.get('/auth/instagram', passport.authenticate('instagram'));
+
+	app.get('/auth/instagram/callback', passport.authenticate('instagram', {
+		successRedirect: '/test',
+		failureRedirect: '/'
+	}));
+
 	app.get('/logout', function(req, res) {
 		req.logout();
 		res.redirect();
 	});
-
 
 };

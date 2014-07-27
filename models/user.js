@@ -20,7 +20,7 @@ var userSchema = mongoose.Schema({
 	instagram: {
 		id: String,
 		token: String,
-		email: String,
+		username: String,
 		name: String
 	}
 
