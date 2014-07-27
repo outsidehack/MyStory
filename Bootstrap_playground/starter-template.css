@@ -13,8 +13,8 @@ table {
 	background-color: #5B81F5;
 }
 
-.header-text {
-	color: #FAFBFC !important;
+.container-fluid{
+	padding-top: 15px;
 }
 
 ul
