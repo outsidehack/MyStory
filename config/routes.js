@@ -1,5 +1,6 @@
 // config/routes.js
-var User = require('../models/user.js');
+var User = require('../models/user.js'),
+	facebook = require('fb');
 
 module.exports = function(app, passport) {
 
@@ -8,6 +9,18 @@ module.exports = function(app, passport) {
 	});
 
 	app.get('/test', function(req, res) {
+		console.log(req.user.facebook.token);
+		//console.log(req.user);
+		facebook.setAccessToken(req.user.facebook.token);
+		var query = ['SELECT uid, name, pic_square FROM user WHERE uid=me()'];
+		facebook.api('fql', { q: query }, function(res) {
+			if (!res || res.error) {
+				console.log(!res ? 'error occurred' : res.error);
+ 			   return;
+			}
+			console.log(res.data[0].fql_result_set);
+		});
+
 		res.render('test2.ejs');
 	});
 
