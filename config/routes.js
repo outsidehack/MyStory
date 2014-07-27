@@ -63,8 +63,8 @@ module.exports = function(app, passport) {
 				for (var i = 0; i < medias.length; i++) {
 					//console.log(medias[0]);
 					stream.push({
-						time: parseInt(medias[0].create_time, 10),
-						html: '<div class="col-xs-12 col-md-2"><img src=' + medias[0].images.standard_resolution.url + '  class="panel img-responsive" alt="Responsive image"></div>'
+						time: parseInt(medias[i].create_time, 10),
+						html: '<div class="col-xs-12 col-md-2"><img src=' + medias[i].images.standard_resolution.url + '  class="panel img-responsive" alt="Responsive image"></div>'
 					})
 					//console.log(medias[0].images.standard_resolution.url);
 				}
@@ -74,7 +74,7 @@ module.exports = function(app, passport) {
 				};
 
 				res.render('test2.ejs', {
-					returnObj: stream
+					returnObj: returnObj
 				});
 			});
 		});

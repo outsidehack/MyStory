@@ -2,9 +2,17 @@
 <!DOCTYPE html>
 
 <html>
-	<head> Test file </head>
+	<head> 
+	Test file 
+
+	</head>
+
+	<% for (var i = 0; i < returnObj.stream.length; i++) { %>
+		<%- returnObj.stream[i].html %>
+	<% } %>
 
 	<body>
 		<p> Hello </p>
+		
 	</body>
-</html>v
+</html>
